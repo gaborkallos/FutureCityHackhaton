@@ -6,10 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.sql.Time;
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
@@ -19,9 +18,10 @@ import java.util.Date;
 public class PollutionData {
 
     @Id
+    @GeneratedValue
     private Long id;
-    private Date date;
-    private Time time;
+    private LocalDate date;
+    private LocalTime time;
     private int PM2;
     private int PM10;
 
