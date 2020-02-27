@@ -1,13 +1,9 @@
 package com.penguins.jolly.hackaton.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.penguins.jolly.hackaton.PollutionData;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
