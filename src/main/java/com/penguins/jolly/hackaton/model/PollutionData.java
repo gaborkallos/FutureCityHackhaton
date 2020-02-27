@@ -8,22 +8,22 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
+import java.sql.Time;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Builder
-public class Sensor {
+public class PollutionData {
 
     @Id
     private Long id;
-    private long x;
-    private long y;
-    @OneToMany
-    private List<PollutionData> pollutionData;
+    private Date date;
+    private Time time;
+    private int PM2;
+    private int PM10;
 
 
 }
