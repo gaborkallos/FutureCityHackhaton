@@ -20,5 +20,10 @@ public class RoutingService {
         return routeInformation;
     }
 
+    public End getRoutePollutionInfoAPI(){
+        End pollutionInformation = apiHandler.PollutionRequest();
+        return pollutionInformation;
+    }
+
 
 }
