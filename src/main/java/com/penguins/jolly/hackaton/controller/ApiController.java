@@ -7,15 +7,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.penguins.jolly.hackaton.model.Sensor;
 import com.penguins.jolly.hackaton.repository.SensorRepository;
+import com.penguins.jolly.hackaton.service.SensorService;
 
 public class ApiController {
 	@Autowired
 	SensorRepository sensorRep;
+	
+	@Autowired
+	SensorService ser;
 
-	@GetMapping(value = "/")
-	public List<Sensor> sensorFcn() {
+	@GetMapping(value =  "/")
+	public void sensorFcn() {
 
-		return sensorRep.findAll();
+		ser.initSensors();
+		
+		List<Sensor> sen = sensorRep.findAll();
+		
+		for (Sensor s : sen) {
+			System.out.print("rep: " + s.getName());
+		}
+		//return sensorRep.findAll();
 
 	}
 }
