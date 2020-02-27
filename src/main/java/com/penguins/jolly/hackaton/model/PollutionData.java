@@ -20,6 +20,8 @@ public class PollutionData {
     @Id
     @GeneratedValue
     private Long id;
+    @ManyToOne
+    private Sensor sensor;
     private LocalDate date;
     private LocalTime time;
     private int PM2;

@@ -1,8 +1,11 @@
 package com.penguins.jolly.hackaton.service;
 
+import com.penguins.jolly.hackaton.model.PollutionData;
 import com.penguins.jolly.hackaton.model.Sensor;
 import com.penguins.jolly.hackaton.repository.SensorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
 
 public class SensorService {
 
@@ -14,31 +17,15 @@ public class SensorService {
     }
 
     public void initSensors(){
-        Sensor sensor;
-        sensor = Sensor.builder()
-                .name("Tisza Lajos")
-                .latitude(46.251669)
-                .longitude(20.144677)
-                .build();
-        sensorRepository.save(sensor);
-        sensor = Sensor.builder()
-                .name("Kossuth Lajos")
-                .latitude(46.255973)
-                .longitude(20.148077)
-                .build();
-        sensorRepository.save(sensor);
-        sensor = Sensor.builder()
-                .name("Kalvaria")
-                .latitude(46.251953)
-                .longitude(20.138452)
-                .build();
-        sensorRepository.save(sensor);
-        sensor = Sensor.builder()
-                .name("Hetvezer")
-                .latitude(46.258885)
-                .longitude(20.143395)
-                .build();
-        sensorRepository.save(sensor);
+        Sensor sensor1 = new Sensor(1L, "Tisza Lajos", 46.251669, 20.144677, new ArrayList<PollutionData>());
+        Sensor sensor2 = new Sensor(2L, "Kossuth Lajos", 46.255973, 20.148077, new ArrayList<PollutionData>());
+        Sensor sensor3 = new Sensor(3L, "Kalvaria", 46.251669, 20.144677, new ArrayList<PollutionData>());
+        Sensor sensor4 = new Sensor(4L, "Hetvezer", 46.258885, 20.143395, new ArrayList<PollutionData>());
+        sensorRepository.save(sensor1);
+        sensorRepository.save(sensor2);
+        sensorRepository.save(sensor3);
+        sensorRepository.save(sensor4);
+
 
     }
 }
